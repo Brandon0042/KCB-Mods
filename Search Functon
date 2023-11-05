@@ -1,0 +1,42 @@
+import wixData from 'wix-data';
+
+let debounceTimer;
+
+export function Search_keyPress(event) { //enable onKeypress for input form
+
+$w("#clearSearch").show();
+
+$w("#Search").value;
+
+    if (debounceTimer) {
+        clearTimeout(debounceTimer);
+        debounceTimer = undefined;
+    }
+    debounceTimer = setTimeout(() => {
+        filter($w("#Search").value); //ID of input form
+    }, 200);
+
+}
+
+let searchWord;
+
+function filter(search) {
+    if (searchWord !== search) {
+        $w("#dataset1").setFilter(wixData.filter().contains('title', search)); // ID of the dataset
+        searchWord = search;
+    }
+
+}
+
+
+$w.onReady(() => {
+ 
+    $w('#clearSearch').onClick(() => {
+ 
+        $w("#search").value = undefined
+        $w("#dataset1").setFilter(wixData.filter())
+ 
+        $w("#clearSearch").hide();
+ 
+    })
+})
