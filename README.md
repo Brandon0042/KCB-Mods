@@ -1,4 +1,9 @@
 # KCB-Mods
+
+Team Number #5
+Team Members: Brandon Edwards, Cam Willias, KC Eziomum
+Team Name: KCB Modders
+
 This repository is where the KCB Mods code is stored.
 
 The code presented below is the main.js file for our website. It holds the functionality of our website.
